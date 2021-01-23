@@ -1,0 +1,15 @@
+{{ ansible_managed | comment }}
+
+# Static table lookup for hostnames.
+# See hosts(5) for details.
+
+#<ip-address>   <hostname.domain.org> <hostname>
+127.0.0.1       localhost
+{{ network_ip | default('127.0.1.1', true) }}       {{ network_fqdn | default([ network_hostname, "localdomain" ] | join("."), true) }} {{ network_hostname }}
+
+::1             localhost ip6-localhost ip6-loopback
+fe00::0         ip6-localnet
+ff00::0         ip6-mcastprefix
+ff00::1         ip6-allnodes
+ff00::2         ip6-allrouters
+ff00::3         ip6-allhosts

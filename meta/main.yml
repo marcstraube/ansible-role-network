@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  role_name: 'network'
+  namespace: 'marcstraube'
+  author: 'Marc Straube'
+  description: 'Install networking tools and configure the network.'
+  license: 'GPL-3.0'
+  min_ansible_version: 2.9
+  platforms:
+    - name: 'ArchLinux'
+  galaxy_tags:
+    - 'network'
+collections:
+  - 'community.general'

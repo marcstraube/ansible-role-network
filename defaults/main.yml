@@ -1,0 +1,9 @@
+---
+network_hostname: 'arch'
+network_fqdn: ''
+network_ip: ''
+network_pptp: false
+network_gui: false
+network_captive_portal: false
+network_wifi_connections: []
+network_install_promiscuous_service: false

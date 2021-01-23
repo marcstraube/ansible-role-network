@@ -1,0 +1,22 @@
+---
+- name: 'Converge'
+  hosts: 'all'
+  gather_facts: false
+  become: true
+  vars:
+    network_hostname: 'foobar'
+    network_pptp: true
+    network_gui: true
+    network_captive_portal: true
+    network_wifi_connections:
+      - SSID: 'mywifinetwork'
+        PSK: 'mypassword'
+        permissions:
+          - 'user1'
+          - 'user2'
+        overwrite: true
+      - SSID: 'wifi2'
+        PSK: 'mypassword'
+    network_install_promiscuous_service: true
+  roles:
+    - 'marcstraube.network'

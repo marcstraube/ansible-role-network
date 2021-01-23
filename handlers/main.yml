@@ -1,0 +1,10 @@
+---
+- name: 'restart network-manager'
+  service:
+    name: 'NetworkManager.service'
+    state: 'restarted'
+
+- name: 'start network-manager-dispatcher'
+  service:
+    name: 'NetworkManager-dispatcher.service'
+    state: 'started'

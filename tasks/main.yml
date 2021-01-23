@@ -1,0 +1,18 @@
+---
+- name: 'Ensure hostname is set'
+  ansible.builtin.hostname:
+    name: '{{ network_hostname }}'
+
+- name: 'Ensure /etc/hosts is configured'
+  ansible.builtin.template:
+    src: 'hosts.j2'
+    dest: '/etc/hosts'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+
+- name: 'Import NetworkManager tasks'
+  ansible.builtin.import_tasks: 'network-manager.yml'
+
+- name: 'Import promiscuous mode tasks'
+  ansible.builtin.import_tasks: 'promiscuous.yml'
